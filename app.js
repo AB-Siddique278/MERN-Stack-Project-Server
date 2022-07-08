@@ -1,17 +1,59 @@
+// require("dotenv").config();
+// const express = require("express");
+// const app = express();
+// const mongoose = require('mongoose');
+// require("./db/Conn");
+// const users = require("./models/userSchema")
+// const cors = require("cors");
+// const router=require("./routes/router");
+// const port = 5000;
+
+// app.use(cors());
+// app.use(express.json());
+
+// app.use(router);
+
+
+// app.listen(port,()=>{
+//     console.log(`server is rnning ${port}`);
+// });
+
+
+
+
 require("dotenv").config();
 const express = require("express");
 const app = express();
-const mongoose = require('mongoose');
-require("./db/Conn");
-const users = require("./models/userSchema")
+const mongoose = require("mongoose");
+require("./db/conn");
+const users = require("./models/userSchema");
+const cors = require("cors");
+const router = require("./routes/router");
 
-//const DB ="mongodb+srv://siddique:1wGgCkpSmNhdt3sf@cluster0.kw6ah.mongodb.net/mernstack?retryWrites=true&w=majority"
+const port =  8003;
 
-const port = 8000;
+app.use(cors());
+app.use(express.json());
 
-app.listen(port,()=>{
-    console.log(`server is rnning ${port}`);
+app.get("/",(req,res)=>{
+    res.json("server start")
+})
+
+app.use(router);
+
+app.listen(port, () => {
+    console.log(`server is start port number ${port}`);
 });
+
+
+
+
+
+
+
+
+
+
 
 //1wGgCkpSmNhdt3sf
 //siddique
