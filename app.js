@@ -36,7 +36,7 @@ app.use(cors());
 app.use(express.json());
 
 app.get("/",(req,res)=>{
-    res.json("server start")
+    res.json("server is start")
 })
 
 app.use(router);
