@@ -7,4 +7,4 @@ mongoose.connect(DB,{
     
     useNewUrlParser:true,
     useUnifiedTopology:true
-}).then(()=> console.log("connection start")).catch((error)=> console.log(error.message));
+}).then(()=> console.log("connection server start")).catch((error)=> console.log(error.message));
